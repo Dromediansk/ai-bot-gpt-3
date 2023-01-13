@@ -62,6 +62,7 @@ async function handleSubmit(event) {
   chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
 
   form.reset();
+  submitButton.disabled = true;
 
   // bot's chatstripe
   const id = generateUniqueId();
