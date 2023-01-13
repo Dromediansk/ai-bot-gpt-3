@@ -89,8 +89,6 @@ async function handleSubmit(event) {
     const data = await response.json();
     const parsedData = data.bot.trim();
 
-    console.log({ parsedData });
-
     typeText(messageDiv, parsedData);
   } else {
     const error = await response.text();
