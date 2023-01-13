@@ -112,6 +112,11 @@ body {
   display: none;
 }
 
+#submit_button[disabled] {
+  opacity: 0.2;
+  cursor: default;
+}
+
 form {
   width: 100%;
   max-width: 1280px;

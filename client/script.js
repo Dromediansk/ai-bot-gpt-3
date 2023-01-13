@@ -2,6 +2,7 @@ import bot from "./assets/bot.svg";
 import user from "./assets/user.svg";
 
 const form = document.querySelector("form");
+const submitButton = document.querySelector("#submit_button");
 const chatContainer = document.querySelector("#chat_container");
 
 let loadInterval;
@@ -99,6 +100,16 @@ async function handleSubmit(event) {
   }
 }
 
+submitButton.disabled = true;
+form.addEventListener("input", (event) => {
+  const value = event.target.value;
+
+  if (value) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
+});
 form.addEventListener("submit", handleSubmit);
 form.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
