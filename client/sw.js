@@ -1,7 +1,9 @@
 // Check if the service worker is already registered
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/sw.js").then(
+    const swUrl = `${process.env.PUBLIC_URL}/sw.js`;
+
+    navigator.serviceWorker.register(swUrl).then(
       function (registration) {
         // Registration was successful
         console.log(

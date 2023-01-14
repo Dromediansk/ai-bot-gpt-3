@@ -125,7 +125,8 @@ form.addEventListener("keyup", (event) => {
 
 // Check if there is a new service worker available
 if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js").then((reg) => {
+  const swUrl = `${process.env.PUBLIC_URL}/sw.js`;
+  navigator.serviceWorker.register(swUrl).then((reg) => {
     reg.addEventListener("updatefound", () => {
       const newWorker = reg.installing;
 
