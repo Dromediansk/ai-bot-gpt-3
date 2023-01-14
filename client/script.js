@@ -123,38 +123,3 @@ form.addEventListener("keyup", (event) => {
   }
 });
 
-// Check if there is a new service worker available
-if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js").then((reg) => {
-    reg.addEventListener("updatefound", () => {
-      const newWorker = reg.installing;
-
-      newWorker.addEventListener("statechange", () => {
-        if (newWorker.state === "installed") {
-          if (navigator.serviceWorker.controller) {
-            // Show a notification to the user asking them to update the site
-            const notification = new Notification(
-              "A new version of this site is available. Click to update."
-            );
-            notification.onclick = function () {
-              window.location.reload();
-            };
-          }
-        }
-      });
-    });
-  });
-
-  navigator.serviceWorker.getRegistration().then(function (reg) {
-    if (reg && reg.waiting) {
-      reg.waiting.postMessage({ type: "SKIP_WAITING" });
-      // Show a notification asking the user to update the site
-      const notification = new Notification(
-        "A new version of this site is available. Click to update."
-      );
-      notification.onclick = function () {
-        window.location.reload();
-      };
-    }
-  });
-}

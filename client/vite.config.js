@@ -1,17 +1,13 @@
 import { defineConfig } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: {
-        app: "./index.html",
-        "service-worker": "./sw.js",
+  plugins: [
+    VitePWA({
+      registerType: "autoUpdate",
+      devOptions: {
+        enabled: true,
       },
-      output: {
-        entryFileNames: (assetInfo) =>
-          assetInfo.name === "sw" ? "[name].js" : "assets/js/[name]-[hash].js",
-      },
-    },
-  },
+    }),
+  ],
 });
