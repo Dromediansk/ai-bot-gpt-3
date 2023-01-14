@@ -79,7 +79,7 @@ async function handleSubmit(event) {
   loader(messageDiv);
 
   // fetch data from server -> bot's response
-  const response = await fetch("https://ai-bot-codex.onrender.com/api/prompt", {
+  const response = await fetch("https://ai-gpt-3-bot.onrender.com/api/prompt", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -122,4 +122,3 @@ form.addEventListener("keyup", (event) => {
     handleSubmit(event);
   }
 });
-
