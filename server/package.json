@@ -1,7 +1,7 @@
 {
-  "name": "js-helper-ai-api",
+  "name": "ai-gpt-3-chatbot-api",
   "version": "1.0.0",
-  "description": "API for Codex bot",
+  "description": "API for GPT-3 chatbot",
   "type": "module",
   "scripts": {
     "dev": "nodemon src/server.js",

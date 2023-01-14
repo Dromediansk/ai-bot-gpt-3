@@ -1,6 +1,7 @@
-## AI chat bot
+## AI GPT-3 Chatbot
 
-Chatting application using advanced AI model (Codex) that provides helpful answers.
+Chatting application using advanced AI model (GPT-3) that provides helpful answers.
+Integrated as Progressive Web App to have easy access on devices.
 It can be served as a tool to increase productivity, get queries in difficult topics or just chit-chat.
 
 ### Tech stack

@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "ai-gpt-3-chatbot-client",
+  "description": "Client for chatbot using GPT-3 AI model",
   "private": true,
   "version": "1.0.0",
   "type": "module",
